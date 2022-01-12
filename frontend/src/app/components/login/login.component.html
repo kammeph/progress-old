@@ -1,0 +1,15 @@
+<div class='flex-container'>
+    <h1>Login</h1>
+    <div class='login-content'>
+        <div *ngIf="loginFailed" class="errorBox">
+            <p>{{ error }}</p>
+        </div>
+        <app-textbox [label]="'Benutzername'" [(text)]="username"></app-textbox>
+        <app-passwordbox [label]="'Passwort'" [(text)]="password"></app-passwordbox>
+        <button mat-raised-button color="primary" (click)="authenticate()">Log In</button>
+    </div>
+    <div class="login-footer">
+        <span>Account erstellen?</span>
+        <a routerLink='/signup'>Registrieren</a>
+    </div>      
+</div>

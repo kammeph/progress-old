@@ -1,0 +1,17 @@
+<div class='flex-container'>
+    <h1>Registrieren</h1>
+    <div class='signup-content'>
+        <div *ngIf="signupFailed" class="errorBox">
+            <p>{{ error }}</p>
+        </div>
+        <app-textbox [(text)]="username" [label]="'Benutzername'"></app-textbox>
+        <app-testcombobox [items]="genders" [(value)]="gender" [label]="'Geschlecht'" [displayValuePath]="'description'"></app-testcombobox>
+        <app-passwordbox [(text)]="password" [label]="'Passwort'"></app-passwordbox>
+        <app-passwordbox [(text)]="passwordRepeat" [label]="'Passwort wiederholen'"></app-passwordbox>        
+        <button mat-raised-button color="primary" (click)="signup()">Sign Up</button>
+    </div>
+    <div class='signup-footer'> 
+        <span>Du hast bereits einen Account?</span>
+        <a routerLink='/login'>Log In</a>
+    </div>
+</div>

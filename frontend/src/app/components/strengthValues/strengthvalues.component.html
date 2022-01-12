@@ -1,0 +1,9 @@
+<h1>Kraftwerte</h1>
+<h3 *ngIf="strengthValues">Total: {{ total }} kg</h3>
+<mat-accordion>
+    <app-strengthvalue 
+        *ngFor="let strengthValue of strengthValues" 
+        [strengthValue]="strengthValue" 
+        (oneRepMaxChange)="onOneRepMaxChange(strengthValues)"></app-strengthvalue>
+</mat-accordion>
+<button mat-raised-button color="primary" (click)="save()">Speichern</button>

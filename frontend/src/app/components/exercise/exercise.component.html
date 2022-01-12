@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <button mat-icon-button (click)="onClose.emit()">
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="update();onClose.emit()">
+        <mat-icon>done</mat-icon>
+    </button>
+</mat-toolbar>
+<div *ngIf="exercise">
+    <app-textbox [label]="'Name'" [(text)]="exercise.name"></app-textbox>
+    <app-loadfactor *ngFor="let loadFactor of loadFactors" [loadFactor]="loadFactor">
+    </app-loadfactor>
+    <app-textbox [label]="'Faktor'" [(text)]="exercise.conversion"></app-textbox>
+</div>

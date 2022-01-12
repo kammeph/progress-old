@@ -1,0 +1,7 @@
+<mat-form-field class="textbox" appearance="fill">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [type]="type" #inputElement [value]="text" (input)="updateValue(inputElement.value)" (keyup)="onKeyup($event)">
+    <button [ngStyle]="{'visibility':text ? 'visible' : 'hidden'}" (click)="updateValue('')" mat-icon-button matSuffix mat-icon-button aria-label="Clear" tabindex="-1">
+      <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>

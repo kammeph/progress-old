@@ -1,0 +1,3 @@
+<div *ngFor="let selection of volumeAdjustmentSelections">
+    <app-testcombobox [items]="selection.volumeAdjustments" [(value)]="selection.selectedVolumeAdjustment" [label]="selection.volumeProperty" [displayValuePath]="'name'"></app-testcombobox>
+</div>

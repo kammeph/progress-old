@@ -1,0 +1,20 @@
+.line {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.add-btn {
+    width: 100%;
+}
+
+.editable, mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}

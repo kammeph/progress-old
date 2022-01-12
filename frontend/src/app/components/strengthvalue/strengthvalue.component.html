@@ -1,0 +1,12 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ strengthValue.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ strengthValue.oneRepMax}} kg
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-textbox #weightInput [label]="'Gewicht'" [(text)]="strengthValue.weight"></app-textbox>
+    <app-textbox #repsInput [label]="'Reps'" [(text)]="strengthValue.reps"></app-textbox>
+</mat-expansion-panel>

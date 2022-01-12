@@ -1,0 +1,25 @@
+p {
+    width: 100%;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    min-width: 50%;
+}
+
+.add-btn {
+    width: 100%;
+}
+
+.edit-btn {
+    z-index: 1000;
+}
+
+@media screen and (max-width: 800px) {
+    mat-sidenav {
+        min-width: 100%;
+    }
+}

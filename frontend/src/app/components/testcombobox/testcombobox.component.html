@@ -1,0 +1,10 @@
+<mat-form-field class="select-form-field" appearance="fill">
+    <mat-label>{{ label }}</mat-label>
+    <mat-select #inputElement [value]="value" (selectionChange)="updateValue(inputElement.value)">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let item of items" [value]="item">
+            <p *ngIf="displayValuePath">{{ item[displayValuePath] }}</p>
+            <p *ngIf="!displayValuePath">{{ item }}</p>
+            </mat-option>
+    </mat-select>
+</mat-form-field>

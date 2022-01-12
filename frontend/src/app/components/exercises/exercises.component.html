@@ -1,0 +1,33 @@
+<div>
+    <mat-expansion-panel *ngIf="!edit" class="example-sidenav-content"  hideToggle>
+        <mat-expansion-panel-header>
+            <p>{{ exerciseGroup.name }}</p>
+            <button mat-icon-button class="edit-btn" (click)="edit = true">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-expansion-panel-header>
+        <div *ngFor="let exercise of exercises">
+            <div class="line">
+                <p (click)="exerciseSelected.emit(exercise)">{{ exercise.name }}</p>
+                <button mat-icon-button (click)="delete(exercise)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <mat-divider>
+            </mat-divider>
+        </div>
+        <button class="add-btn" mat-flat-button (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-expansion-panel>
+
+    <div class="editable" *ngIf="edit">
+        <input mat-input type="text" [(ngModel)]="exerciseGroup.name">
+        <button mat-icon-button class="edit-btn" (click)="onUpdateExerciseGroup.emit(exerciseGroup);edit = false">
+            <mat-icon>done</mat-icon>
+        </button>
+        <button mat-icon-button class="edit-btn" (click)="onDeleteExerciseGroup.emit(exerciseGroup);edit = false">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>

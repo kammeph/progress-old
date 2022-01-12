@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <h1>Übungen</h1>
+        <mat-accordion>
+            <app-exercises 
+                *ngFor="let group of exerciseGroups" 
+                #exercises [exerciseGroup]="group" 
+                (onUpdateExerciseGroup)="update($event)"
+                (onDeleteExerciseGroup)="delete($event)"
+                (exerciseSelected)="onExerciseSelected($event);sidenav.open()" 
+                (exerciseDeleted)="sidenav.close()">
+            </app-exercises>
+        </mat-accordion>
+        <button mat-flat-button class="add-btn" (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-sidenav-content>
+    <mat-sidenav #sidenav mode="side" position="end">
+        <app-exercise #appexercise [exercise]="selectedExercise" (onClose)="sidenav.close()"></app-exercise>
+    </mat-sidenav>
+</mat-sidenav-container>

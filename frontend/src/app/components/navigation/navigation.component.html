@@ -1,0 +1,20 @@
+<header>
+    <img src='../../../assets/images/kk_logo.png' class='logo'/>
+    <button class='nav-toggle-open'>
+      <span></span>
+    </button>
+    <button class='nav-toggle-close'>
+      <span></span>
+    </button>
+    <nav>
+      <ul *ngIf="logedin==false">
+        <li><a routerLink='/login'>Login</a></li>
+      </ul>
+      <ul *ngIf="logedin">
+        <li><a routerLink='/strengthvalues'>Kraftwerte</a></li>
+        <li><a routerLink='/volumecalculator'>Volumenrechner</a></li>
+        <li><a routerLink='/exercises'>Übungen</a></li>
+        <li><a (click)="logout()" >Logout</a></li>
+      </ul>
+    </nav>
+</header>
